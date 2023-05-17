@@ -442,6 +442,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mocha@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "@types/mocha@npm:10.0.1"
+  checksum: 224ea9fce7b1734ccdb9aa99a622d902a538ce1847bca7fd22c5fb38adcf3ed536f50f48f587085db988a4bb3c2eb68f4b98e1cd6a38bc5547bd3bbbedc54495
+  languageName: node
+  linkType: hard
+
 "@types/ms@npm:*":
   version: 0.7.31
   resolution: "@types/ms@npm:0.7.31"
@@ -3916,6 +3923,7 @@ __metadata:
   resolution: "test-whatwg-fetch-karma@workspace:."
   dependencies:
     "@tsconfig/node14": ^1.0.3
+    "@types/mocha": ^10.0.1
     "@types/node": ^20.1.7
     karma: ^6.4.2
     karma-chrome-launcher: ^3.2.0
