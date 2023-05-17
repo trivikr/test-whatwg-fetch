@@ -2,13 +2,24 @@
   "name": "test-whatwg-fetch-karma",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
   "repository": "git@github.com:trivikr/test-whatwg-fetch-karma.git",
   "author": "Kamat, Trivikram <trivikr.dev@gmail.com>",
   "license": "MIT",
   "packageManager": "yarn@3.5.1",
   "devDependencies": {
     "@tsconfig/node14": "^1.0.3",
+    "@types/jasmine": "^4.3.1",
     "@types/node": "^20.1.7",
+    "fetch-mock": "^9.11.0",
+    "karma": "^6.4.2",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-typescript": "^5.5.4",
+    "karma-typescript-es6-transform": "^5.5.4",
+    "playwright": "^1.33.0",
     "typescript": "^5.0.4"
   }
 }
