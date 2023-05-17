@@ -5,10 +5,16 @@ module.exports = function (config) {
     frameworks: ["jasmine", "karma-typescript"],
     files: ["src/**/*.ts"],
     preprocessors: { "**/*.ts": "karma-typescript" },
-    proxies: {
-      "/mockServiceWorker.js": "/base/__mocks__/mockServiceWorker.js",
-    },
     reporters: ["progress", "karma-typescript"],
     browsers: ["ChromeHeadless"],
+    karmaTypescriptConfig: {
+      tsconfig: "./tsconfig.json",
+      compilerOptions: {
+        module: "commonjs",
+      },
+      bundlerOptions: {
+        transforms: [require("karma-typescript-es6-transform")()],
+      },
+    },
   });
 };
