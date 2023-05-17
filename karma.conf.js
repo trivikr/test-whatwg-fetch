@@ -1,5 +1,4 @@
-// ToDo: get binaries from PlayWright, as it supports Firefox and Webkit too.
-process.env.CHROME_BIN = require("puppeteer").executablePath();
+process.env.CHROME_BIN = require("playwright").chromium.executablePath();
 
 module.exports = function (config) {
   config.set({
