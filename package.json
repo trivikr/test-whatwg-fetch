@@ -9,6 +9,9 @@
   "devDependencies": {
     "@tsconfig/node14": "^1.0.3",
     "@types/node": "^20.1.7",
+    "karma": "^6.4.2",
+    "karma-typescript": "^5.5.4",
+    "msw": "^1.2.1",
     "typescript": "^5.0.4"
   }
 }
