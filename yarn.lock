@@ -2201,6 +2201,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jasmine-core@npm:^4.1.0":
+  version: 4.6.0
+  resolution: "jasmine-core@npm:4.6.0"
+  checksum: c5c5ce16c512cf0bc8b6b4f2d4f0ac7b23cae90624e0cd9d22da3baab3266e9a4da5a9363fb7937b16e0a4cf550bb79183cd74483ce55cfff4b6678434d599b7
+  languageName: node
+  linkType: hard
+
 "js-levenshtein@npm:^1.1.6":
   version: 1.1.6
   resolution: "js-levenshtein@npm:1.1.6"
@@ -2249,6 +2256,17 @@ __metadata:
     graceful-fs:
       optional: true
   checksum: 6447d6224f0d31623eef9b51185af03ac328a7553efcee30fa423d98a9e276ca08db87d71e17f2310b0263fd3ffa6c2a90a6308367f661dc21580f9469897c9e
+  languageName: node
+  linkType: hard
+
+"karma-jasmine@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "karma-jasmine@npm:5.1.0"
+  dependencies:
+    jasmine-core: ^4.1.0
+  peerDependencies:
+    karma: ^6.0.0
+  checksum: ebefd1094e7c2b4c854027621d854908166c79cccaabb5a6ba0ace42cd785a9da0a9aad1aa41937956bd4848287eac04886eebfd7c851b927d2132d3563b7739
   languageName: node
   linkType: hard
 
@@ -3540,6 +3558,7 @@ __metadata:
     "@tsconfig/node14": ^1.0.3
     "@types/node": ^20.1.7
     karma: ^6.4.2
+    karma-jasmine: ^5.1.0
     karma-typescript: ^5.5.4
     msw: ^1.2.1
     typescript: ^5.0.4
