@@ -10,7 +10,8 @@ module.exports = function (config) {
     browsers: ["ChromeHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
-      // ToDo: Check if true ESM testing can be done here.
+      // ToDo: karma-typescript does not support ES modules
+      // https://github.com/monounity/karma-typescript/issues/345#issuecomment-869121158
       compilerOptions: {
         module: "commonjs",
       },
