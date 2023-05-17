@@ -2,9 +2,13 @@ import { callFetch } from "./callFetch";
 import fetchMock from "fetch-mock";
 
 describe(callFetch.name, () => {
+  afterEach(() => {
+    fetchMock.restore();
+  });
+
   const url = "https://example.com";
 
-  it("returns ReadableStream<Uint8Array> if defined", async () => {
+  it("returns ReadableStream<Uint8Array> if body is defined", async () => {
     const mockResponse = "hello";
     fetchMock.mock(url, mockResponse);
 
@@ -22,6 +26,15 @@ describe(callFetch.name, () => {
     }
 
     expect(responseText).toBe(mockResponse);
-    fetchMock.restore();
+  });
+
+  it("returns Blob if body is empty", async () => {
+    fetchMock.mock(url, { status: 200 });
+
+    const response = await callFetch(url);
+    expect(response).toBeInstanceOf(Blob);
+
+    const responseText = await (response as Blob).text();
+    expect(responseText).toBe("");
   });
 });
