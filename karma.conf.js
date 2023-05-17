@@ -1,3 +1,4 @@
+// ToDo: get binaries from PlayWright, as it supports Firefox and Webkit too.
 process.env.CHROME_BIN = require("puppeteer").executablePath();
 
 module.exports = function (config) {
@@ -6,6 +7,7 @@ module.exports = function (config) {
     files: ["src/**/*.ts"],
     preprocessors: { "**/*.ts": "karma-typescript" },
     reporters: ["progress", "karma-typescript"],
+    // ToDo: Add tests for Chromuim, WebKit and Firefox from playwright https://github.com/microsoft/playwright
     browsers: ["ChromeHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
