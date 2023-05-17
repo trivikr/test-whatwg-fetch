@@ -11,6 +11,17 @@ describe(callFetch.name, () => {
     const response = await callFetch(url);
     expect(response).toBeInstanceOf(ReadableStream);
 
+    let responseText = "";
+    const reader = (response as ReadableStream<Uint8Array>).getReader();
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) {
+        break;
+      }
+      responseText += new TextDecoder().decode(value);
+    }
+
+    expect(responseText).toBe(mockResponse);
     fetchMock.restore();
   });
 });
