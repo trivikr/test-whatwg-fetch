@@ -9,6 +9,7 @@ module.exports = function (config) {
     browsers: ["ChromeHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
+      // ToDo: Check if true ESM testing can be done here.
       compilerOptions: {
         module: "commonjs",
       },
