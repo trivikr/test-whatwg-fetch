@@ -1,0 +1,21 @@
+name: chrome_v113
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+      - uses: browser-actions/setup-chromium@v1
+        with:
+          # Closest available commit position to official v113 from From https://chromiumdash.appspot.com/releases?platform=Linux
+          chrome-version: "1121461"
+      - run: yarn
+      - run: yarn test
