@@ -1,4 +1,4 @@
-name: chrome_v112
+name: chrome_v113.0.5672.63
 
 on:
   pull_request:

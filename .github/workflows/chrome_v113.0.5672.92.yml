@@ -1,0 +1,13 @@
+name: chrome_v113.0.5672.92
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    uses: ./.github/workflows/chrome.yml
+    with:
+      # From https://chromiumdash.appspot.com/releases?platform=Linux
+      # Verified from logs that this is Chromium 113.0.5672.0
+      chrome-version: "1121454"
