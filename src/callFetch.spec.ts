@@ -29,7 +29,7 @@ describe(callFetch.name, () => {
   });
 
   it("returns Blob if body is empty", async () => {
-    fetchMock.mock(url, { status: 200 });
+    fetchMock.mock(url, { status: 204 });
 
     const response = await callFetch(url);
     expect(response).toBeInstanceOf(Blob);
