@@ -1,0 +1,13 @@
+name: chrome_v90
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    uses: ./.github/workflows/chrome.yml
+    with:
+      # Closest available commit position to official v90 from From https://chromiumdash.appspot.com/releases?platform=Linux
+      # Verified from logs that this is Chromium 90.0.4422.0
+      chrome-version: "855001"
