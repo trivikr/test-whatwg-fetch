@@ -24,4 +24,6 @@ jobs:
           export CHROME_BIN=${{ steps.setup-chrome.outputs.chrome-path }}
           $CHROME_BIN --version
       - run: yarn
-      - run: yarn test
+      - run: |
+          $CHROME_BIN --version
+          yarn test
