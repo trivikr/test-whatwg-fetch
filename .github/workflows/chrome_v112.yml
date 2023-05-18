@@ -18,5 +18,6 @@ jobs:
           # Closest available commit position to official v112 from From https://chromiumdash.appspot.com/releases?platform=Linux
           # Verified from logs that this is Chromium 112.0.5615.0
           chrome-version: "1109220"
+      - run: echo $CHROME_BIN
       - run: yarn
       - run: yarn test
