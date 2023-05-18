@@ -1,10 +1,11 @@
+// Setup CHROMIUM_BIN environment variable to point to the Chromium executable before running tests
+
 module.exports = function (config) {
   config.set({
     frameworks: ["jasmine", "karma-typescript"],
     files: ["src/**/*.ts"],
     preprocessors: { "**/*.ts": "karma-typescript" },
     reporters: ["progress", "karma-typescript"],
-    // ToDo: Add tests for WebKit and Firefox from playwright https://github.com/microsoft/playwright
     browsers: ["ChromiumHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
