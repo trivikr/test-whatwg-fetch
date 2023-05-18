@@ -15,6 +15,7 @@ jobs:
           cache: "yarn"
       - uses: browser-actions/setup-chromium@v1
         with:
-          chrome-version: "1109224"
+          # Closest available commit position to official v112 from From https://chromiumdash.appspot.com/releases?platform=Linux
+          chrome-version: "1109220"
       - run: yarn
       - run: yarn test
