@@ -1,5 +1,3 @@
-process.env.CHROMIUM_BIN = require("playwright").chromium.executablePath();
-
 module.exports = function (config) {
   config.set({
     frameworks: ["jasmine", "karma-typescript"],
