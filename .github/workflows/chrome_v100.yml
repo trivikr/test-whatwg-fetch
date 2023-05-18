@@ -1,0 +1,13 @@
+name: chrome_v100
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    uses: ./.github/workflows/chrome.yml
+    with:
+      # Closest available commit position to official v110 from From https://chromiumdash.appspot.com/releases?platform=Linux
+      # Verified from logs that this is Chromium 100.0.4896.0
+      chrome-version: "972765"
