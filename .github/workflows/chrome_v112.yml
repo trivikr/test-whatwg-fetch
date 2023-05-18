@@ -1,0 +1,19 @@
+name: chrome_v112
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+      - uses: browser-actions/setup-chromium@v1
+        with:
+          chrome-version: "112.0"
+      - run: yarn
+      - run: yarn test
