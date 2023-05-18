@@ -15,6 +15,6 @@ jobs:
           cache: "yarn"
       - uses: browser-actions/setup-chromium@v1
         with:
-          chrome-version: "112.0"
+          chrome-version: "112001"
       - run: yarn
       - run: yarn test
