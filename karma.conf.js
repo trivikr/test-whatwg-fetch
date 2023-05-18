@@ -1,4 +1,4 @@
-process.env.CHROME_BIN = require("playwright").chromium.executablePath();
+process.env.CHROMIUM_BIN = require("playwright").chromium.executablePath();
 
 module.exports = function (config) {
   config.set({
@@ -6,8 +6,8 @@ module.exports = function (config) {
     files: ["src/**/*.ts"],
     preprocessors: { "**/*.ts": "karma-typescript" },
     reporters: ["progress", "karma-typescript"],
-    // ToDo: Add tests for Chromuim, WebKit and Firefox from playwright https://github.com/microsoft/playwright
-    browsers: ["ChromeHeadless"],
+    // ToDo: Add tests for WebKit and Firefox from playwright https://github.com/microsoft/playwright
+    browsers: ["ChromiumHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
       // ToDo: karma-typescript does not support ES modules
