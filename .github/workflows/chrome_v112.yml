@@ -20,7 +20,8 @@ jobs:
           chrome-version: "1109220"
         id: setup-chrome
       - name: Set up CHROME_BIN
-        run: export CHROME_BIN=${{ steps.setup-chrome.outputs.chrome-path }}
+        run: |
+          export CHROME_BIN=${{ steps.setup-chrome.outputs.chrome-path }}
           $CHROME_BIN --version
       - run: yarn
       - run: yarn test
