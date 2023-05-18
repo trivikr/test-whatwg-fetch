@@ -1,4 +1,4 @@
-// Setup CHROMIUM_BIN environment variable to point to the Chromium executable before running tests
+// Setup CHROME_BIN environment variable to point to the Chromium executable before running tests
 
 module.exports = function (config) {
   config.set({
@@ -6,7 +6,7 @@ module.exports = function (config) {
     files: ["src/**/*.ts"],
     preprocessors: { "**/*.ts": "karma-typescript" },
     reporters: ["progress", "karma-typescript"],
-    browsers: ["ChromiumHeadless"],
+    browsers: ["ChromeHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
       // ToDo: karma-typescript does not support ES modules
