@@ -16,6 +16,7 @@ jobs:
       - uses: browser-actions/setup-chromium@v1
         with:
           # Closest available commit position to official v113 from From https://chromiumdash.appspot.com/releases?platform=Linux
+          # Verified from logs that this is Chromium 113.0.5672.0
           chrome-version: "1121461"
       - run: yarn
       - run: yarn test
