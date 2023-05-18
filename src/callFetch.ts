@@ -1,7 +1,10 @@
 export const callFetch = async (url: string) => {
   const response = await fetch(url);
-  if (response.body !== undefined) {
-    return response.body;
+  const hasReadableStream = response.body !== undefined;
+
+  if (!hasReadableStream) {
+    return response.blob();
   }
-  return response.blob();
+
+  return response.body;
 };
