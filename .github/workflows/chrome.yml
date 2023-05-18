@@ -1,0 +1,28 @@
+name: chrome
+
+on:
+  workflow_call:
+    inputs:
+      chrome-version:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+      - uses: browser-actions/setup-chromium@v1
+        with:
+          chrome-version: ${{ inputs.chrome-version }}
+        id: setup-chrome
+      - run: yarn
+      - name: test
+        run: |
+          export CHROME_BIN=${{ steps.setup-chrome.outputs.chrome-path }}
+          $CHROME_BIN --version
+          yarn test

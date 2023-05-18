@@ -5,23 +5,9 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          cache: "yarn"
-      - uses: browser-actions/setup-chromium@v1
-        with:
-          # Closest available commit position to official v112 from From https://chromiumdash.appspot.com/releases?platform=Linux
-          # Verified from logs that this is Chromium 112.0.5615.0
-          chrome-version: "1109220"
-        id: setup-chrome
-      - run: yarn
-      - name: test
-        run: |
-          export CHROME_BIN=${{ steps.setup-chrome.outputs.chrome-path }}
-          $CHROME_BIN --version
-          yarn test
+  test:
+    uses: ./.github/workflows/chrome.yml
+    with:
+      # Closest available commit position to official v112 from From https://chromiumdash.appspot.com/releases?platform=Linux
+      # Verified from logs that this is Chromium 112.0.5615.0
+      chrome-version: "1109220"
