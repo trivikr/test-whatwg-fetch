@@ -7,7 +7,7 @@ module.exports = function (config) {
     preprocessors: { "**/*.ts": "karma-typescript" },
     reporters: ["progress", "karma-typescript"],
     // ToDo: Add tests for WebKit and Firefox from playwright https://github.com/microsoft/playwright
-    browsers: ["ChromiumHeadless"],
+    browsers: ["ChromiumHeadless", "ChromeCanaryHeadless"],
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
       // ToDo: karma-typescript does not support ES modules
