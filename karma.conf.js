@@ -27,7 +27,7 @@ module.exports = function (config) {
 
     // MSW must be referenced here in order for it to work
     proxies: {
-      "/mockServiceWorker.js": "/base/mockServiceWorker.js",
+      "/mockServiceWorker.js": "/base/src/__mocks__/mockServiceWorker.js",
     },
 
     singleRun: true,
