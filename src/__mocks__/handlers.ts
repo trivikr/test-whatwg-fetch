@@ -7,5 +7,5 @@ export const handlers = [
   ),
 
   // Route to return null
-  rest.get("/null", (req, res, ctx) => res(ctx.status(200))),
+  rest.get("/empty", (req, res, ctx) => res(ctx.status(200))),
 ];
