@@ -1,3 +1,4 @@
+import { expect } from "@esm-bundle/chai";
 import { callFetch } from "./callFetch";
 import fetchMock from "fetch-mock";
 
@@ -13,7 +14,7 @@ describe(callFetch.name, () => {
     fetchMock.mock(url, mockResponse);
 
     const response = await callFetch(url);
-    expect(response).toBeInstanceOf(ReadableStream);
+    expect(response).should.be.instanceof(ReadableStream);
 
     let responseText = "";
     const reader = (response as ReadableStream<Uint8Array>).getReader();
@@ -25,16 +26,16 @@ describe(callFetch.name, () => {
       responseText += new TextDecoder().decode(value);
     }
 
-    expect(responseText).toBe(mockResponse);
+    expect(responseText).to.equal(mockResponse);
   });
 
   it("returns Blob if body is empty", async () => {
     fetchMock.mock(url, { status: 200 });
 
     const response = await callFetch(url);
-    expect(response).toBeInstanceOf(Blob);
+    expect(response).should.be.instanceof(Blob);
 
     const responseText = await (response as Blob).text();
-    expect(responseText).toBe("");
+    expect(responseText).to.equal("");
   });
 });

@@ -3,15 +3,18 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "wtr"
   },
   "repository": "git@github.com:trivikr/test-whatwg-fetch.git",
   "author": "Kamat, Trivikram <trivikr.dev@gmail.com>",
   "license": "MIT",
   "packageManager": "yarn@3.5.1",
   "devDependencies": {
+    "@esm-bundle/chai": "^4.3.4-fix.0",
     "@tsconfig/node14": "^1.0.3",
     "@types/node": "^20.1.7",
+    "@web/dev-server-esbuild": "^0.4.1",
+    "@web/test-runner": "^0.16.1",
     "fetch-mock": "^9.11.0",
     "typescript": "^5.0.4"
   }
