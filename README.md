@@ -1,2 +1,3 @@
-# test-whatwg-fetch-karma
-Attempts to write tests for WHATWG fetch in browsers using karma
+# test-whatwg-fetch
+
+Attempts to write tests for WHATWG fetch in browsers
