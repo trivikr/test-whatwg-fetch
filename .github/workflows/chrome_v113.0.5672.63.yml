@@ -1,0 +1,11 @@
+name: chrome_v113.0.5672.63
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    uses: ./.github/workflows/chrome.yml
+    with:
+      chrome-version: "113.0.5672.63"

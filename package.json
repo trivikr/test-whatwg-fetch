@@ -19,7 +19,6 @@
     "karma-jasmine": "^5.1.0",
     "karma-typescript": "^5.5.4",
     "karma-typescript-es6-transform": "^5.5.4",
-    "playwright": "^1.33.0",
     "typescript": "^5.0.4"
   }
 }
