@@ -3,11 +3,16 @@ process.env.CHROMIUM_BIN = require("playwright").chromium.executablePath();
 module.exports = function (config) {
   config.set({
     frameworks: ["jasmine", "karma-typescript"],
+
     files: ["src/**/*.ts"],
+
     preprocessors: { "**/*.ts": "karma-typescript" },
+
     reporters: ["progress", "karma-typescript"],
+
     // ToDo: Add tests for WebKit and Firefox from playwright https://github.com/microsoft/playwright
     browsers: ["ChromiumHeadless"],
+
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
       // ToDo: karma-typescript does not support ES modules
@@ -19,6 +24,12 @@ module.exports = function (config) {
         transforms: [require("karma-typescript-es6-transform")()],
       },
     },
+
+    // MSW must be referenced here in order for it to work
+    proxies: {
+      "/mockServiceWorker.js": "/base/mockServiceWorker.js",
+    },
+
     singleRun: true,
   });
 };
